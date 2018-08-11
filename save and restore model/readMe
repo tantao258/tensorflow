@@ -1,0 +1,11 @@
+tensorflow 模型的保存有两种方法
+method1：
+    加载模型时重新定义网络结构，然后加载变量
+method2：
+    无需重新定义网络结构，直接加载网络结构和变量，更方便
+
+
+模型保存后有三个文件
+    1. model.ckpt.meta文件保存了TensorFlow网络结构
+    2. model.ckpt文件保存了每一个变量的取值
+    3. checkpoint文件保存了一个目录下所有的模型文件列表
