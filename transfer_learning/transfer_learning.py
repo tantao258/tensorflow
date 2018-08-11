@@ -120,7 +120,7 @@ class Vgg16:
 
     def conv_layer(self, bottom, name):
         with tf.variable_scope(name):   # CNN's filter is constant, NOT Variable that can be trained
-            conv = tf.nn.conv2d(bottom, self.data_dict[name][0], [1, 1, 1, 1], padding='SAME')
+            conv = tf.nn.conv2d(input=bottom, filter=self.data_dict[name][0], stride=[1, 1, 1, 1], padding='SAME')
             lout = tf.nn.relu(tf.nn.bias_add(conv, self.data_dict[name][1]))
             return lout
 
